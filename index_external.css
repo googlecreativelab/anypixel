@@ -224,6 +224,10 @@ footer {
       opacity: 0;
       font-size: 0.8125rem;
       padding-top: 1.875rem; }
+      @media screen and (max-width: 1023px) {
+        .image-slider > div .carousel-caption {
+          font-size: 0.625rem;
+          line-height: 1.25rem; } }
     .image-slider > div.active img, .image-slider > div.active video, .image-slider > div.active iframe, .image-slider > div.active .poster {
       display: inherit;
       opacity: 1;
