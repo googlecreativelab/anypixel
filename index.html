@@ -1,0 +1,167 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <title>anypixel.js</title>
+        <meta name="viewport" content="user-scalable = no"/>
+        <meta name="apple-mobile-web-app-capable" content="yes" />
+        <meta charset="utf-8"/>
+        <link href='https://fonts.googleapis.com/css?family=Roboto+Mono:100,300,400,500' rel='stylesheet'>
+        <link href='index_external.css' rel='stylesheet'>
+        <link href="//vjs.zencdn.net/5.4.6/video-js.min.css" rel="stylesheet">
+    </head>
+    <body>
+        <header>
+            <img src="img/header.png" title="anypixel.js"/>
+            <div id="subtitle">A web-friendly way for anyone to build unusual displays.</div>
+            <canvas id="header-canvas" height="456"></canvas>
+        </header>
+        <section class="section-a">
+            <div class="eight-span body-copy">AnyPixel.js is an open-source software and hardware library that makes it possible to use the web to create big, unusual, interactive displays out of all kinds of things. Anyone can fork the code and the schematics to create their own display at any scale.</div>
+            <div class="eight-span z-fix">
+                <a href="https://github.com/googlecreativelab/anypixel" target="_blank" class="get-button">Get it on GitHub</a>
+            </div>
+        </section>
+        <div class="container-a">
+            <section class="section-c">
+                <div class="divider"><img src="img/xxxx.png" alt="divider"/></div>
+                <div class="eight-span">
+                    <h1>What We Made</h1>
+                    <div class="body-copy">The first display using this platform is in the 8th Avenue lobby at the Google NYC office. To create this installation, we used 5880 off-the-shelf arcade buttons as our pixels.</div>
+                </div>
+                
+                <div class="full-span image-slider" id="carousel">
+                    <img id="arrow-prev" src="img/arrow_prev.png" alt="previous arrow"/>
+
+                    <div class="active">
+                        <video class="video-js vjs-default-skin" poster="video/video_01.jpg">
+                            <source src="video/video_01.mp4" type="video/mp4"/>
+                            <source src="video/video_01.webm" type="video/webm"/>
+                        </video>
+                        <img class="poster" src="video/video_01.jpg"/>
+                        <div class="eight-span body-copy carousel-caption">Our lobby is open to the public. If you’re in NYC, come by and play!</div>
+                    </div>
+                    <div class="yt-iframe">
+                        <iframe width="1280" height="720" src="https://www.youtube.com/embed/58pxJ8z1Vow" frameborder="0" allowfullscreen></iframe>
+                    </div>
+                    <div>
+                        <video class="video-js vjs-default-skin" poster="video/video_02.jpg">
+                            <source src="video/video_02.mp4" type="video/mp4"/>
+                            <source src="video/video_02.webm" type="video/webm"/>
+                        </video>
+                        <img class="poster" src="video/video_02.jpg"/>
+                        <div class="eight-span body-copy carousel-caption">With AnyPixel.js, every button is interactive. Press one or press them all! Featured creations by: Jeremy Abel, Anders Hoff, and Manny Tan.</div>
+                    </div>
+                    <div>
+                        <video class="video-js vjs-default-skin" poster="video/video_03.jpg">
+                            <source src="video/video_03.mp4" type="video/mp4"/>
+                            <source src="video/video_03.webm" type="video/webm"/>
+                        </video>
+                        <img class="poster" src="video/video_03.jpg"/>
+                        <div class="eight-span body-copy carousel-caption">AnyPixel.js is fully multitouch - the software can handle single touches and multiple touches by any number of people. Featured creations by: Kyle Phillips, Jeramy Morrill, and Jeremy Abel.</div>
+                    </div>
+                    <div>
+                        <video class="video-js vjs-default-skin" poster="video/video_04.jpg">
+                            <source src="video/video_04.mp4" type="video/mp4"/>
+                            <source src="video/video_04.webm" type="video/webm"/>
+                        </video>
+                        <img class="poster" src="video/video_04.jpg"/>
+                        <div class="eight-span body-copy carousel-caption">We built 11 demo apps programmed in javascript and rendered on a 140x42 canvas. All of them are available as part of the AnyPixel.js framework example library. Featured creations by: Jeremy Abel, Anders Hoff, Manny Tan, Jeramy Morrill, Felix Woitzel, Kyle Phillips, and Nick Fox-Gieg.</div>
+                    </div>
+                    <div>
+                        <img src="img/carousel_01.jpg" alt="carousel image 1"/>
+                        <div class="eight-span body-copy carousel-caption">We built our first hardware prototype out of a cardboard box and poster board. The software framework allows you to scale your project up or down.</div>
+                    </div>
+                    <div>
+                        <img src="img/carousel_02.jpg" alt="carousel image 2"/>
+                        <div class="eight-span body-copy carousel-caption">We used buttons for our project, but with AnyPixel.js you can use anything touchable, toggleable, flippable, switchable…</div>
+                    </div>
+                    <div>
+                        <img src="img/carousel_03.jpg" alt="carousel image 3"/>
+                        <div class="eight-span body-copy carousel-caption">Up close and personal look at an early version of our electrical boards, LEDs, and buttons.</div>
+                    </div>
+                    <div>
+                        <img src="img/carousel_04.jpg" alt="carousel image 4"/>
+                        <div class="eight-span body-copy carousel-caption">Righty tighty times 5880. We’ve never been more grateful for socket wrenches.</div>
+                    </div>
+                    <div>
+                        <img src="img/carousel_05.jpg" alt="carousel image 5"/>
+                        <div class="eight-span body-copy carousel-caption">AnyPixel.js is truly a sum of its parts. Each piece is modular so grab the plans to make a version big or small.</div>
+                    </div>
+                    <div>
+                        <img src="img/carousel_06.jpg" alt="carousel image 6"/>
+                        <div class="eight-span body-copy carousel-caption">We keep our eye on the prize when we’re hard at work. A soft reflection from our in-progress prototype helps too.</div>
+                    </div>
+                    <div>
+                        <img src="img/carousel_07.jpg" alt="carousel image 7"/>
+                        <div class="eight-span body-copy carousel-caption">A true behind-the-scenes peek: this is the hardware setup that runs the buttonwall in NY. Check out the open source schematics to see how we put it all together.</div>
+                    </div>
+
+                    <img id="arrow-next" src="img/arrow_next.png" alt="next arrow"/>
+                </div>
+            </section>
+        </div>
+        <section class="section-d">
+            <div class="divider"><img src="img/xxxx.png" alt="divider"/></div>
+            <div class="eight-span">
+                <h1>What You Can Build With This</h1>
+                <div class="body-copy">AnyPixel.js’ straightforward hardware/software framework makes it easy to build any display where each pixel is an interactive element. You could use it to build an interactive display using light switches, lightboxes, or balloons - all kinds of things.</div>
+            </div>
+            <div class="ten-span three-images">
+                <img src="img/doodle_switches.png" alt="A wall of light switches?"/>
+                <img src="img/doodle_lightboxes.png" alt="A wall of lightboxes?"/>
+                <img src="img/doodle_balloons.png" alt="A wall of balloons?"/>
+            </div>
+            <div class="eight-span body-copy">Want to play around before you start building? Check out the in-browser previewer here.</div>
+        </section>
+        <div class="container-b">
+            <section class="section-e">
+                <div class="divider"><img src="img/xxxx.png" alt="divider"/></div>
+                <div class="eight-span">
+                    <h1>Open Source Elements</h1>
+                    <div class="body-copy">There are two parts of AnyPixel.js: the software and the hardware. The software is written in simple web code. All you need to know how to do is draw on an HTML canvas element. The hardware varies by your execution, but you can learn more about the one we used at Google here.</div>
+                </div>
+                <div class="ten-span table-row first">
+                    <img class="doodle-header" src="img/doodle_hardware.png" alt="hardware"/>
+                    <img src="img/doodle_components.png" alt="components"/>
+                    <img src="img/doodle_pcb.png" alt="pcb source files"/>
+                </div>
+                <div class="ten-span table-row second">
+                    <img class="doodle-header" src="img/doodle_software.png" alt="software"/>
+                    <img src="img/doodle_firmware.png" alt="firmware code"/>
+                    <img src="img/doodle_frontend.png" alt="front end code"/>
+                    <img src="img/doodle_sample.png" alt="sample code"/>
+                </div>
+                <div class="eight-span z-fix">
+                    <a href="https://github.com/googlecreativelab/anypixel" target="_blank" class="get-button">Get it on GitHub</a>
+                </div>
+            </section>
+        </div>
+        <footer>
+            <section>
+                <div class="eight-span"><img class="footer-logo" src="img/footer_logo.png" alt="Google logo"/></div>
+            </section>
+        </footer>
+    </body>
+    <script src="index_external.js"></script>
+
+    <!-- Google Tag Manager -->
+    <noscript><iframe src="//www.googletagmanager.com/ns.html?id=GTM-TZTMX9"
+    height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+    <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+    new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+    j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+    '//www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+    })(window,document,'script','dataLayer','GTM-TZTMX9');</script>
+    <script>
+      (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+      (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+      m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+      })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+      ga('create', 'UA-77406512-1', 'auto');
+      ga('send', 'pageview');
+
+    </script>
+    <!-- End Google Tag Manager -->
+    
+</html>
