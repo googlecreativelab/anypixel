@@ -1,0 +1,33 @@
+/*
+ * Copyright 2016 Google Inc. All Rights Reserved.
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *     http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+
+#ifndef __TLC59401_H
+#define __TLC59401_H
+
+void TLC59401_Config(void);
+void TLC59401_SetValue(int index, int value);
+void TLC59401_Set8bitCalValue(uint8_t index, uint8_t value);
+void TLC59401_SetPacket(uint8_t *buf);
+void TLC59401_Send(void);
+bool TLC59401_SendPending(void);
+void TLC59401_Update(void);
+void TLC59401_SetDotCorrection(int index, uint8_t inVal);
+void TLC59401_SetDotCorrectionPacket(uint8_t *buf);
+void TLC59401_SendDotCorrection(void);
+void TLC59401_SetCalibration(uint8_t index, uint8_t *values);
+void TLC59401_GetCalibration(uint8_t index, uint8_t *values);
+
+#endif //__TLC59401_H

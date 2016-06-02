@@ -1,0 +1,16 @@
+{
+  "name": "subway",
+  "display_name": "AnyPixel Subway",
+  "version": "1.0.0",
+  "description": "MTA Subway map inspired design. Press a button to reroute the train",
+  "main": "./index.js",
+  "scripts": {
+    "build": "browserify src/app.js > index.js",
+    "postinstall": "browserify src/app.js > index.js",
+    "watch": "watchify src/app.js -o index.js"
+  },
+  "dependencies": {
+    "anypixel": "^1.0.0",
+    "exdat": "github:anvaka/dat.gui"
+  }
+}

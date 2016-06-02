@@ -1,0 +1,460 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
+<EmBitz_project_file>
+	<EmBitzVersion release="0.42" revision="0" />
+	<FileVersion major="1" minor="0" />
+	<Project>
+		<Option title="controller" />
+		<Option pch_mode="2" />
+		<Option compiler="armgcc_eb" />
+		<Build>
+			<Target title="Debug">
+				<Option output="bin\Debug\controller-DBG.elf" />
+				<Option object_output="obj\Debug\" />
+				<Option type="0" />
+				<Option create_hex="1" />
+				<Option compiler="armgcc_eb" />
+				<Option projectDeviceOptionsRelation="0" />
+				<Option projectIncludeDirsRelation="0" />
+				<Compiler>
+					<Add option="-Wall" />
+					<Add option="-fdata-sections" />
+					<Add option="-ffunction-sections" />
+					<Add option="-O0" />
+					<Add option="-g3" />
+					<Add option="-DDEBUG_IP" />
+					<Add option="-DUSE_DEBUG_PINS" />
+				</Compiler>
+				<Assembler>
+					<Add option="-Wa,--gdwarf-2" />
+				</Assembler>
+				<Linker>
+					<Add option="-eb_use_semi" />
+					<Add option="-Wl,--gc-sections" />
+				</Linker>
+			</Target>
+			<Target title="Release">
+				<Option output="bin\Release\controller.elf" />
+				<Option object_output="obj\Release\" />
+				<Option type="0" />
+				<Option create_hex="1" />
+				<Option compiler="armgcc_eb" />
+				<Option projectDeviceOptionsRelation="0" />
+				<Option projectIncludeDirsRelation="0" />
+				<Compiler>
+					<Add option="-fdata-sections" />
+					<Add option="-ffunction-sections" />
+					<Add option="-O2" />
+					<Add option="-g2" />
+				</Compiler>
+				<Assembler>
+					<Add option="-Wa,--no-warn" />
+				</Assembler>
+				<Linker>
+					<Add option="-Wl,--gc-sections" />
+				</Linker>
+			</Target>
+		</Build>
+		<Device>
+			<Add option="$device=cortex-m4" />
+			<Add option="$fpu=fpv4-sp-d16" />
+			<Add option="$lscript=./ThirdParty/stm32f407vg_flash.ld" />
+			<Add option="$stack=0x0100" />
+			<Add option="$heap=0x0000" />
+		</Device>
+		<Compiler>
+			<Add option="-mfloat-abi=hard" />
+			<Add option="-DARM_MATH_CM4" />
+			<Add option="-D__FPU_USED" />
+			<Add option="-DSTM32F407VG" />
+			<Add option="-DSTM32F4XX" />
+			<Add option="-DUSE_STDPERIPH_DRIVER" />
+			<Add option="-DREV1" />
+			<Add option="-DHSE_VALUE=20000000" />
+			<Add option="-fno-strict-aliasing" />
+			<Add directory=".\inc" />
+			<Add directory="ThirdParty\cmsis" />
+			<Add directory="ThirdParty\SPL\inc" />
+			<Add directory="ThirdParty\lwip-1.4.1\src\include" />
+			<Add directory="ThirdParty\lwip-1.4.1\port\STM32F4x7" />
+			<Add directory="ThirdParty\lwip-1.4.1\src\include\ipv4" />
+		</Compiler>
+		<Linker>
+			<Add option="-eb_lib=n" />
+			<Add option="-eb_start_files" />
+			<Add option="-lm" />
+		</Linker>
+		<Unit filename="inc\buttons.h" />
+		<Unit filename="inc\fifo.h" />
+		<Unit filename="inc\LEDproto.h" />
+		<Unit filename="inc\pins.h" />
+		<Unit filename="inc\project_config.h" />
+		<Unit filename="inc\textfuncs.h" />
+		<Unit filename="inc\uart.h" />
+		<Unit filename="src\buttons.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="src\fifo.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="src\LEDproto.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="src\main.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="src\pins.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="src\project_config.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="src\textfuncs.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="src\uart.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="ThirdParty\cmsis\arm_common_tables.h" />
+		<Unit filename="ThirdParty\cmsis\arm_math.h" />
+		<Unit filename="ThirdParty\cmsis\core_cm4.h" />
+		<Unit filename="ThirdParty\cmsis\core_cm4_simd.h" />
+		<Unit filename="ThirdParty\cmsis\core_cmFunc.h" />
+		<Unit filename="ThirdParty\cmsis\core_cmInstr.h" />
+		<Unit filename="ThirdParty\ETH\inc\stm32f4x7_eth.h" />
+		<Unit filename="ThirdParty\ETH\src\stm32f4x7_eth.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="ThirdParty\inc\lwipopts.h" />
+		<Unit filename="ThirdParty\inc\main.h" />
+		<Unit filename="ThirdParty\inc\netconf.h" />
+		<Unit filename="ThirdParty\inc\stm32f4x7_eth_bsp.h" />
+		<Unit filename="ThirdParty\inc\stm32f4x7_eth_conf.h" />
+		<Unit filename="ThirdParty\inc\stm32f4xx.h" />
+		<Unit filename="ThirdParty\inc\stm32f4xx_conf.h" />
+		<Unit filename="ThirdParty\inc\stm32f4xx_it.h" />
+		<Unit filename="ThirdParty\inc\system_stm32f4xx.h" />
+		<Unit filename="ThirdParty\lwip-1.4.1\port\STM32F4x7\Standalone\ethernetif.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="ThirdParty\lwip-1.4.1\port\STM32F4x7\Standalone\ethernetif.h" />
+		<Unit filename="ThirdParty\lwip-1.4.1\src\api\api_lib.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="ThirdParty\lwip-1.4.1\src\api\api_msg.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="ThirdParty\lwip-1.4.1\src\api\err.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="ThirdParty\lwip-1.4.1\src\api\netbuf.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="ThirdParty\lwip-1.4.1\src\api\netdb.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="ThirdParty\lwip-1.4.1\src\api\netifapi.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="ThirdParty\lwip-1.4.1\src\api\sockets.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="ThirdParty\lwip-1.4.1\src\api\tcpip.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="ThirdParty\lwip-1.4.1\src\core\def.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="ThirdParty\lwip-1.4.1\src\core\dhcp.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="ThirdParty\lwip-1.4.1\src\core\dns.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="ThirdParty\lwip-1.4.1\src\core\init.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="ThirdParty\lwip-1.4.1\src\core\ipv4\autoip.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="ThirdParty\lwip-1.4.1\src\core\ipv4\icmp.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="ThirdParty\lwip-1.4.1\src\core\ipv4\igmp.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="ThirdParty\lwip-1.4.1\src\core\ipv4\inet.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="ThirdParty\lwip-1.4.1\src\core\ipv4\inet_chksum.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="ThirdParty\lwip-1.4.1\src\core\ipv4\ip.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="ThirdParty\lwip-1.4.1\src\core\ipv4\ip_addr.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="ThirdParty\lwip-1.4.1\src\core\ipv4\ip_frag.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="ThirdParty\lwip-1.4.1\src\core\mem.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="ThirdParty\lwip-1.4.1\src\core\memp.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="ThirdParty\lwip-1.4.1\src\core\netif.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="ThirdParty\lwip-1.4.1\src\core\pbuf.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="ThirdParty\lwip-1.4.1\src\core\raw.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="ThirdParty\lwip-1.4.1\src\core\stats.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="ThirdParty\lwip-1.4.1\src\core\sys.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="ThirdParty\lwip-1.4.1\src\core\tcp.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="ThirdParty\lwip-1.4.1\src\core\tcp_in.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="ThirdParty\lwip-1.4.1\src\core\tcp_out.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="ThirdParty\lwip-1.4.1\src\core\timers.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="ThirdParty\lwip-1.4.1\src\core\udp.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="ThirdParty\lwip-1.4.1\src\include\ipv4\lwip\autoip.h" />
+		<Unit filename="ThirdParty\lwip-1.4.1\src\include\ipv4\lwip\icmp.h" />
+		<Unit filename="ThirdParty\lwip-1.4.1\src\include\ipv4\lwip\igmp.h" />
+		<Unit filename="ThirdParty\lwip-1.4.1\src\include\ipv4\lwip\inet.h" />
+		<Unit filename="ThirdParty\lwip-1.4.1\src\include\ipv4\lwip\inet_chksum.h" />
+		<Unit filename="ThirdParty\lwip-1.4.1\src\include\ipv4\lwip\ip.h" />
+		<Unit filename="ThirdParty\lwip-1.4.1\src\include\ipv4\lwip\ip_addr.h" />
+		<Unit filename="ThirdParty\lwip-1.4.1\src\include\ipv4\lwip\ip_frag.h" />
+		<Unit filename="ThirdParty\lwip-1.4.1\src\include\lwip\api.h" />
+		<Unit filename="ThirdParty\lwip-1.4.1\src\include\lwip\api_msg.h" />
+		<Unit filename="ThirdParty\lwip-1.4.1\src\include\lwip\arch.h" />
+		<Unit filename="ThirdParty\lwip-1.4.1\src\include\lwip\debug.h" />
+		<Unit filename="ThirdParty\lwip-1.4.1\src\include\lwip\def.h" />
+		<Unit filename="ThirdParty\lwip-1.4.1\src\include\lwip\dhcp.h" />
+		<Unit filename="ThirdParty\lwip-1.4.1\src\include\lwip\dns.h" />
+		<Unit filename="ThirdParty\lwip-1.4.1\src\include\lwip\err.h" />
+		<Unit filename="ThirdParty\lwip-1.4.1\src\include\lwip\init.h" />
+		<Unit filename="ThirdParty\lwip-1.4.1\src\include\lwip\mem.h" />
+		<Unit filename="ThirdParty\lwip-1.4.1\src\include\lwip\memp.h" />
+		<Unit filename="ThirdParty\lwip-1.4.1\src\include\lwip\memp_std.h" />
+		<Unit filename="ThirdParty\lwip-1.4.1\src\include\lwip\netbuf.h" />
+		<Unit filename="ThirdParty\lwip-1.4.1\src\include\lwip\netdb.h" />
+		<Unit filename="ThirdParty\lwip-1.4.1\src\include\lwip\netif.h" />
+		<Unit filename="ThirdParty\lwip-1.4.1\src\include\lwip\netifapi.h" />
+		<Unit filename="ThirdParty\lwip-1.4.1\src\include\lwip\opt.h" />
+		<Unit filename="ThirdParty\lwip-1.4.1\src\include\lwip\pbuf.h" />
+		<Unit filename="ThirdParty\lwip-1.4.1\src\include\lwip\raw.h" />
+		<Unit filename="ThirdParty\lwip-1.4.1\src\include\lwip\sio.h" />
+		<Unit filename="ThirdParty\lwip-1.4.1\src\include\lwip\snmp.h" />
+		<Unit filename="ThirdParty\lwip-1.4.1\src\include\lwip\snmp_asn1.h" />
+		<Unit filename="ThirdParty\lwip-1.4.1\src\include\lwip\snmp_msg.h" />
+		<Unit filename="ThirdParty\lwip-1.4.1\src\include\lwip\snmp_structs.h" />
+		<Unit filename="ThirdParty\lwip-1.4.1\src\include\lwip\sockets.h" />
+		<Unit filename="ThirdParty\lwip-1.4.1\src\include\lwip\stats.h" />
+		<Unit filename="ThirdParty\lwip-1.4.1\src\include\lwip\sys.h" />
+		<Unit filename="ThirdParty\lwip-1.4.1\src\include\lwip\tcp.h" />
+		<Unit filename="ThirdParty\lwip-1.4.1\src\include\lwip\tcp_impl.h" />
+		<Unit filename="ThirdParty\lwip-1.4.1\src\include\lwip\tcpip.h" />
+		<Unit filename="ThirdParty\lwip-1.4.1\src\include\lwip\timers.h" />
+		<Unit filename="ThirdParty\lwip-1.4.1\src\include\lwip\udp.h" />
+		<Unit filename="ThirdParty\lwip-1.4.1\src\include\netif\etharp.h" />
+		<Unit filename="ThirdParty\lwip-1.4.1\src\include\posix\netdb.h" />
+		<Unit filename="ThirdParty\lwip-1.4.1\src\include\posix\sys\socket.h" />
+		<Unit filename="ThirdParty\lwip-1.4.1\src\netif\etharp.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="ThirdParty\lwip-1.4.1\src\netif\ethernetif.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="ThirdParty\SPL\inc\misc.h" />
+		<Unit filename="ThirdParty\SPL\inc\stm32f4xx_adc.h" />
+		<Unit filename="ThirdParty\SPL\inc\stm32f4xx_can.h" />
+		<Unit filename="ThirdParty\SPL\inc\stm32f4xx_crc.h" />
+		<Unit filename="ThirdParty\SPL\inc\stm32f4xx_cryp.h" />
+		<Unit filename="ThirdParty\SPL\inc\stm32f4xx_dac.h" />
+		<Unit filename="ThirdParty\SPL\inc\stm32f4xx_dbgmcu.h" />
+		<Unit filename="ThirdParty\SPL\inc\stm32f4xx_dcmi.h" />
+		<Unit filename="ThirdParty\SPL\inc\stm32f4xx_dma.h" />
+		<Unit filename="ThirdParty\SPL\inc\stm32f4xx_exti.h" />
+		<Unit filename="ThirdParty\SPL\inc\stm32f4xx_flash.h" />
+		<Unit filename="ThirdParty\SPL\inc\stm32f4xx_fsmc.h" />
+		<Unit filename="ThirdParty\SPL\inc\stm32f4xx_gpio.h" />
+		<Unit filename="ThirdParty\SPL\inc\stm32f4xx_hash.h" />
+		<Unit filename="ThirdParty\SPL\inc\stm32f4xx_i2c.h" />
+		<Unit filename="ThirdParty\SPL\inc\stm32f4xx_iwdg.h" />
+		<Unit filename="ThirdParty\SPL\inc\stm32f4xx_pwr.h" />
+		<Unit filename="ThirdParty\SPL\inc\stm32f4xx_rcc.h" />
+		<Unit filename="ThirdParty\SPL\inc\stm32f4xx_rng.h" />
+		<Unit filename="ThirdParty\SPL\inc\stm32f4xx_rtc.h" />
+		<Unit filename="ThirdParty\SPL\inc\stm32f4xx_sdio.h" />
+		<Unit filename="ThirdParty\SPL\inc\stm32f4xx_spi.h" />
+		<Unit filename="ThirdParty\SPL\inc\stm32f4xx_syscfg.h" />
+		<Unit filename="ThirdParty\SPL\inc\stm32f4xx_tim.h" />
+		<Unit filename="ThirdParty\SPL\inc\stm32f4xx_usart.h" />
+		<Unit filename="ThirdParty\SPL\inc\stm32f4xx_wwdg.h" />
+		<Unit filename="ThirdParty\SPL\src\misc.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="ThirdParty\SPL\src\stm32f4xx_adc.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="ThirdParty\SPL\src\stm32f4xx_can.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="ThirdParty\SPL\src\stm32f4xx_crc.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="ThirdParty\SPL\src\stm32f4xx_cryp.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="ThirdParty\SPL\src\stm32f4xx_cryp_aes.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="ThirdParty\SPL\src\stm32f4xx_cryp_des.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="ThirdParty\SPL\src\stm32f4xx_cryp_tdes.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="ThirdParty\SPL\src\stm32f4xx_dac.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="ThirdParty\SPL\src\stm32f4xx_dbgmcu.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="ThirdParty\SPL\src\stm32f4xx_dcmi.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="ThirdParty\SPL\src\stm32f4xx_dma.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="ThirdParty\SPL\src\stm32f4xx_exti.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="ThirdParty\SPL\src\stm32f4xx_flash.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="ThirdParty\SPL\src\stm32f4xx_fsmc.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="ThirdParty\SPL\src\stm32f4xx_gpio.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="ThirdParty\SPL\src\stm32f4xx_hash.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="ThirdParty\SPL\src\stm32f4xx_hash_md5.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="ThirdParty\SPL\src\stm32f4xx_hash_sha1.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="ThirdParty\SPL\src\stm32f4xx_i2c.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="ThirdParty\SPL\src\stm32f4xx_iwdg.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="ThirdParty\SPL\src\stm32f4xx_pwr.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="ThirdParty\SPL\src\stm32f4xx_rcc.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="ThirdParty\SPL\src\stm32f4xx_rng.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="ThirdParty\SPL\src\stm32f4xx_rtc.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="ThirdParty\SPL\src\stm32f4xx_sdio.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="ThirdParty\SPL\src\stm32f4xx_spi.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="ThirdParty\SPL\src\stm32f4xx_syscfg.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="ThirdParty\SPL\src\stm32f4xx_tim.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="ThirdParty\SPL\src\stm32f4xx_usart.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="ThirdParty\SPL\src\stm32f4xx_wwdg.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="ThirdParty\src\netconf.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="ThirdParty\src\startup_stm32f4xx.S">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="ThirdParty\src\stm32f4x7_eth_bsp.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="ThirdParty\src\stm32f4xx_it.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="ThirdParty\src\system_stm32f4xx.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Extensions>
+			<code_completion />
+			<debugger>
+				<target_debugging_settings target="Debug" active_interface="ST-link">
+					<debug_interface interface_id="ST-link" ip_address="localhost" ip_port="4242" path="${EMBLOCKS}\share\contrib" executable="STLinkGDB.exe" description="ThirdParty\STM32F40x.svd" dont_start_server="false" backoff_time="1000" options="0" reg_filter="0" active_family="STMicroelectronics">
+						<family_options family_id="STMicroelectronics">
+							<option opt_id="ID_JTAG_SWD" opt_value="swd" />
+							<option opt_id="ID_VECTOR_START" opt_value="0x08000000" />
+							<option opt_id="ID_RESET_TYPE" opt_value="System" />
+							<option opt_id="ID_LOAD_PROGRAM" opt_value="1" />
+							<option opt_id="ID_SEMIHOST_CHECK" opt_value="1" />
+							<option opt_id="ID_RAM_EXEC" opt_value="0" />
+							<option opt_id="ID_VEC_TABLE" opt_value="1" />
+							<option opt_id="ID_DONT_CONN_RESET" opt_value="0" />
+							<option opt_id="ID_ALL_MODE_DEBUG" opt_value="0" />
+							<option opt_id="ID_DEV_ADDR" opt_value="" />
+							<option opt_id="ID_VERBOSE_LEVEL" opt_value="3" />
+						</family_options>
+					</debug_interface>
+				</target_debugging_settings>
+				<target_debugging_settings target="Release" active_interface="ST-link">
+					<debug_interface interface_id="ST-link" ip_address="localhost" ip_port="4242" path="${EMBLOCKS}\share\contrib" executable="STLinkGDB.exe" description="ThirdParty\STM32F40x.svd" dont_start_server="false" backoff_time="1000" options="0" reg_filter="0" active_family="STMicroelectronics">
+						<family_options family_id="STMicroelectronics">
+							<option opt_id="ID_JTAG_SWD" opt_value="swd" />
+							<option opt_id="ID_VECTOR_START" opt_value="0x08000000" />
+							<option opt_id="ID_RESET_TYPE" opt_value="System" />
+							<option opt_id="ID_LOAD_PROGRAM" opt_value="1" />
+							<option opt_id="ID_SEMIHOST_CHECK" opt_value="1" />
+							<option opt_id="ID_RAM_EXEC" opt_value="0" />
+							<option opt_id="ID_VEC_TABLE" opt_value="1" />
+							<option opt_id="ID_DONT_CONN_RESET" opt_value="0" />
+							<option opt_id="ID_ALL_MODE_DEBUG" opt_value="0" />
+							<option opt_id="ID_DEV_ADDR" opt_value="" />
+							<option opt_id="ID_VERBOSE_LEVEL" opt_value="3" />
+						</family_options>
+					</debug_interface>
+				</target_debugging_settings>
+			</debugger>
+			<envvars />
+		</Extensions>
+	</Project>
+</EmBitz_project_file>

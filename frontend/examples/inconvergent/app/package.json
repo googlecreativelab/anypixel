@@ -1,0 +1,15 @@
+{
+    "dependencies": {
+    	"anypixel": "^1.0.0",
+        "async": "^1.5.2"
+    },
+    "description": "",
+    "main": "./index.js",
+    "name": "inconvergent",
+    "display_name": "Inconvergent",
+    "scripts": {
+        "build": "browserify src/app.js > index.js",
+        "postinstall": "browserify src/app.js > index.js"
+    },
+    "version": "1.0.0"
+}

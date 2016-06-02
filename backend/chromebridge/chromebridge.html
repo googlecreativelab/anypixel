@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>AnyPixel - ChromeBridge</title>
+  <link href="css/chromebridge.css" media="all" rel="stylesheet">
+</head>
+<body>
+
+  <h1>AnyPixel - ChromeBridge</h1>
+
+  <div id="mode-switch">
+    <table id="app-list">
+      <tr>
+        <td class="key">Application</td>
+        <td class="val app_list"><select id="app-selector"><option>anypixel-app-demo</option></select></td>
+        <td class="actions"><button class="action-reload" id="reload-app-list-button">Reload app list</button></td>
+      </tr>
+    </table>
+  </div>
+
+  <table id="actions">
+    <tr class="pixel-streaming">
+      <td class="key">Pixel Streaming</td>
+      <td class="val"><span id="streaming-status">Streaming</span></td>
+      <td class="actions"><button class="action-toggle" id="pause-button">Pause</button></td>
+    </tr>
+    
+    <tr class="all-calibrations">
+      <td class="key">Calibration</td>
+      <td class="val" colspan="2">
+        <button id="set-dot-correction-button">Set Dot Correction</button>
+        <button id="set-calibration-button">Set Calibration</button>
+      </td>
+    </tr>
+  </table>
+
+  <h1>Display Unit Status</h1>
+
+  <table id="unit_status"></table>
+
+  <h1>Power Unit Status</h1>
+
+  <table id="power_status"></table>
+
+  <h1>App</h1>
+
+  <div id="webviewContainer">
+    <div class="reload"><button class="action-reload-app" id="reload-webview-button">Reload</button></div>
+    <webview id="webview" partition="killswitch"></webview>
+  </div>
+
+  <div id="display-unit-modal" class="unitDetails modal">
+    <div class="content">
+      <h1>Display Unit: <span id="display-unit-label">0</span></h1>
+      
+      <h2>Pixel Temperatures (&deg;F)</h2>
+      <table id="pixel-temp-table" class="all_temps"></table>
+      
+      <h2>Average Temperature (&deg;F)</h2>
+      <table id="avg-temp-table" class="avg_temps"></table>
+
+      <h2>MAC Address</h2>
+      <table id="mac-address-table" class="ids"></table>
+      
+      <h2>Uptime</h2>
+      <table id="uptime-table" class="uptime"></table>
+
+      <h2>Actions</h2>
+      <table class="actions">
+        <tr>
+          <td><button id="send-calibration-button" class="action-send-calibration">Send Calibration</button></td>
+        </tr>
+        <tr>
+          <td><button id="send-dot-correction-button" class="action-send-dot-correction">Send Dot Correction</button></td>
+        </tr>
+      </table>
+    </div>
+  </div>
+
+  <div id="power-unit-modal" class="powerboardDetails modal">
+    <div class="content">
+      <h1>Power Unit: <span id="power-unit-label">0</span></h1>
+      <h2>AC</h2>
+      <table class="status_ac">
+        <tr>
+          <td></td>
+          <td></td>
+        </tr>
+      </table>
+      <h2>24v</h2>
+      <table class="status_24v">
+        <tr>
+          <td></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td></td>
+          <td></td>
+        </tr>
+      </table>
+      <h2>Relay</h2>
+      <table class="status_relay">
+        <tr>
+          <td></td>
+          <td></td>
+        </tr>
+      </table>
+      <h2>Relay Control</h2>
+      <table class="actions">
+        <tr>
+          <td data-column="0"><button data-action="on" class="action-on">ON</button></td>
+          <td data-column="1"><button data-action="on" class="action-on">ON</button></td>
+        </tr>
+        <tr>
+          <td data-column="0"><button data-action="off" class="action-off">OFF</button></td>
+          <td data-column="1"><button data-action="off" class="action-off">OFF</button></td>
+        </tr>
+      </table>
+    </div>
+  </div>
+
+  <div class="confirmDialog modal modal-stacked">
+    <div class="content">
+      <h1>Are you sure?</h1>
+      <table class="actions">
+        <tr>
+          <td><button class="action-yes">Yes</button></td>
+          <td><button class="action-no">No</button></td>
+        </tr>
+      </table>
+    </div>
+  </div>
+
+  <div class="dotCorrectionDialog modal modal-stacked" id="dot-correction-modal">
+    <div class="content">
+      <h1>Dot Correction</h1>
+      <h2>R, G, B values</h2>
+      <table class="rgb">
+        <tr>
+          <td><input id="dot-correct-field-r" type="text" name="dot_r" value="50"></td>
+          <td><input id="dot-correct-field-g" type="text" name="dot_g" value="100"></td>
+          <td><input id="dot-correct-field-b" type="text" name="dot_b" value="50"></td>
+        </tr>
+      </table>
+      <table class="actions">
+        <tr>
+          <td><button id="dot-correct-send-button" class="action-send">Send</button></td>
+          <td><button id="dot-correct-cancel-button" class="action-cancel">Cancel</button></td>
+        </tr>
+      </table>
+    </div>
+  </div>
+
+  <div class="waitDialog modal modal-double-stacked" id="waiting-overlay">
+    <div class="content">
+      <h1>Please Wait...</h1>
+    </div>
+  </div>
+  <script src="index.js"></script>
+</body>
+</html>

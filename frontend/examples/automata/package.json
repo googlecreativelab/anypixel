@@ -1,0 +1,15 @@
+{
+  "name": "automata",
+  "display_name": "Automata",
+  "version": "1.0.0",
+  "description": "",
+  "main": "./index.js",
+  "scripts": {
+    "build": "browserify src/app.js > index.js",
+    "postinstall": "browserify src/app.js > index.js",
+    "watch": "watchify src/app.js -o index.js"
+  },
+  "dependencies": {
+    "anypixel": "^1.0.0"
+  }
+}

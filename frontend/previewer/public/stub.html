@@ -1,0 +1,86 @@
+<!doctype html>
+<html style="background: url({background}) no-repeat top left fixed; background-size: contain;" lang="en">
+    <head>
+        <title>AnyPixel Emulator</title>
+        <meta name="viewport" content="user-scalable = no"/>
+        <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+        <meta name="apple-mobile-web-app-capable" content="yes" />
+        <meta charset="utf-8"/>
+        <style>
+            html, body, div, canvas, ul, li {
+                margin: 0;
+                list-style: none;
+                padding: 0;
+            }
+
+            body {
+                overflow: hidden;
+            }
+
+            canvas {
+                left: 0;
+                position: absolute;
+                top: 0;
+            }
+
+            #button-canvas {
+                visibility: hidden;
+            }
+
+            #anypixel-ui {
+                left: 0;
+                padding: 12px 16px;
+                position: absolute;
+                top: 0;
+                z-index: 2;
+            }
+
+            #anypixel-ui li {
+                padding: 6px 0;
+            }
+
+            .button {
+                background-color: #FFF;
+                border-radius: 50%;
+                box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.16), 0 2px 10px 0 rgba(0, 0, 0, 0.12);
+                color: rgba(0, 0, 0, 0.54);
+                cursor: pointer;
+                display: inline-block;
+                height: 37px;
+                line-height: 37px;
+                transition: background-color 200ms, color 200ms;
+                vertical-align: middle;
+                width: 37px;
+            }
+
+            .button i {
+                -webkit-touch-callout: none;
+                -webkit-user-select: none;  
+                -khtml-user-select: none;   
+                -moz-user-select: none;     
+                -ms-user-select: none;
+                font-size: 1.4rem;
+                line-height: 37px;
+                text-align: center;
+                user-select: none;
+                width: inherit;
+            }
+
+            .selected {
+                background-color: #2196F3;
+                color: rgba(255, 255, 255, 1);
+            }
+        </style>
+    </head>
+    <body>
+        <canvas id="button-canvas"></canvas>
+        <ul id="anypixel-ui">
+            <li><a href="#" id="cursor-pointer" class="button" title="Cursor: single point"><i class="material-icons">touch_app</i></a></li>
+            <li><a href="#" id="cursor-hand" class="button" title="Cursor: simulated hand"><i class="material-icons">pan_tool</i></a></li>
+            <li><a href="#" id="vis-toggle" class="button" title="Toggle displaying of events"><i class="material-icons">visibility</i></a></li>
+            <li><a href="#" id="color-toggle" class="button" title="Toggle color correction"><i class="material-icons">wb_incandescent</i></a></li>
+        </ul>
+    </body>
+    <script id="preview-script" data-spacing="{spacing}" data-radius="{radius}" data-x="{x}" data-y="{y}" src="preview.js"></script>
+    <script src="{entry}"></script>
+</html>

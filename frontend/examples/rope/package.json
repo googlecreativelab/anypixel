@@ -1,0 +1,22 @@
+{
+  "name": "rope",
+  "display_name": "Rope",
+  "version": "1.0.0",
+  "main": "index.js",
+  "license" : "Apache-2.0",
+  "author": {
+    "name": "Jeremy Abel",
+    "email": "jeremyabel@gmail.com",
+    "url": "http://www.jeremyabel.com"
+  },
+  "dependencies": {
+    "anypixel": "^1.0.0",
+    "b-spline": "^1.0.5",
+    "random-seed": "^0.3.0",
+    "svg-path-parser": "^1.0.1",
+    "three": "^0.74.0"
+  },
+  "scripts": {
+    "build": "browserify -d src/app.js > index.js"
+  }
+}

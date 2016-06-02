@@ -1,0 +1,102 @@
+#!/usr/bin/env node
+
+/**
+ * Copyright 2016 Google Inc. All Rights Reserved.
+ * 
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *     http://www.apache.org/licenses/license-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the license.
+ */
+
+var fs = require('fs-extra');
+var bs = require('browser-sync').create();
+var cli = require('cli').enable('status');
+var pkg = require('../package.json');
+var path = require('path');
+
+var publicPath = 'public';
+var defaultFile = 'index.js';
+var defaultPort = 9000;
+var defaultBackground = 'lobby.jpg';
+var defaultSpacing = 14;
+var defaultRadius = 4.4;
+var defaultStartX = 418;
+var defaultStartY = 470;
+
+cli.setApp(path.basename(module.filename, path.extname(module.filename)), pkg.version);
+
+cli.parse({
+	file: [ 'f', 'Use this file as the entry point. File path is relative to the current working directory', 'file', defaultFile ],
+	port: [ 'p', 'Run the server on this port', 'int', defaultPort ],
+	background: [ 'b', 'Use this file as the background image. File path is relative to the current working directory', 'file', defaultBackground ],
+	spacing: [ 's', 'Space between the centers of each button, in pixels', 'float', defaultSpacing ],
+	radius: [ 'r', 'Radius of each button, in pixels', 'float', defaultRadius ],
+	x: [ 'x', 'Horizontal starting position for the button grid, in pixels', 'float', defaultStartX ],
+	y: [ 'y', 'Vertical starting position for the button grid, in pixels', 'float', defaultStartY ]
+});
+
+/**
+ * Spin up a browser-sync server which serves the public/stub.html file. Stub.html contains a 
+ * script tag with a source set to "{entry}". This is replaced with the specified app entry file's
+ * path. Changes to this file are watched and will automatically refresh the browser.
+ */
+cli.main(function(args, options) {
+	var file = path.join(process.cwd(), options.file);
+	var bgPath;
+
+	// Copy the background file to the public directory
+	if (options.background !== defaultBackground) {
+		bgPath = 'background' + path.extname(options.background);
+		fs.copySync(
+				path.join(process.cwd(), options.background), 
+				path.join(__dirname, '..', publicPath, bgPath), { clobber: true });
+	} else {
+		bgPath = options.background;
+	}
+
+	bs.watch(file).on('change', bs.reload);
+
+	bs.init({
+		notify: false,
+		port: options.port,
+		server: {
+			baseDir: [
+				path.join(__dirname, '..', publicPath),
+				path.dirname(file)
+			],
+			index: 'stub.html'
+		},
+		rewriteRules: [{
+			match: '{entry}',
+			replace: path.basename(file)
+		}, {
+			match: '{background}',
+			replace: path.basename(bgPath)
+		}, {
+			match: '{spacing}',
+			replace: options.spacing
+		}, {
+			match: '{radius}',
+			replace: options.radius
+		}, {
+			match: '{x}',
+			replace: options.x
+		}, {
+			match: '{y}',
+			replace: options.y
+		}],
+		logPrefix: 'Anypixel Preview'
+	});
+
+	cli.ok('Starting Anypixel Browser Previewer ' + pkg.version);
+	cli.ok('Watching ' + file + ' for changes...');
+	cli.info('Press ctrl-c to exit.');
+});

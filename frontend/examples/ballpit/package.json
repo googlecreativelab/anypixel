@@ -1,0 +1,25 @@
+{
+  "name": "ballpit",
+  "display_name": "Ball Pit",
+  "version": "1.0.0",
+  "description": "An app for the anypixel where the user plays with a 2D ball pit",
+  "main": "app/index.js",
+  "scripts": {
+    "build": "browserify app/index.js > index.js",
+    "watch": "watchify app/index.js -d -o index.js -v",
+    "preview": "preview -f index.js"
+  },
+  "license": "Apache 2.0",
+  "engines": {
+    "node": ">=4.0.0"
+  },
+  "dependencies": {
+    "animitter": "^1.1.0",
+    "anypixel": "^1.0.0",
+    "eases": "^1.0.8",
+    "p2": "^0.7.1"
+  },
+  "devDependencies": {
+    "watchify": "^3.7.0"
+  }
+}

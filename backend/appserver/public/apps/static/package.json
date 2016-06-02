@@ -1,0 +1,13 @@
+{
+  "display_name": "Static",
+  "name": "static",
+  "version": "1.0.0",
+  "description": "",
+  "main": "app.js",
+  "dependencies": {
+    "anypixel": "googlecreativelab/anypixel"
+  },
+  "scripts": {
+    "build": "browserify . -d -o index.js"
+  }
+}
