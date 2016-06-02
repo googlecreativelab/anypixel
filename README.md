@@ -7,7 +7,7 @@ The first display using this platform is in the 8th Avenue lobby at the Google N
 ![buttonwall](https://github.com/googlecreativelab/anypixel/blob/master/buttonwall.jpg)
 
 ## What You'll Find
-- **/hardware**- EAGLE schematics, board layouts, CAD files, wiring diagrams, and blueprints
+- **/hardware** - EAGLE schematics, board layouts, CAD files, wiring diagrams, and blueprints
 - **/firmware** - microcontroller code, written for the STM32 family of devices
 - **/backend** - node.js and chrome applications for communicating with the hardware.
 - **/frontend** - the app framework, an in-browser previewer, and 12 example apps written by Googlers and friends worldwide.
@@ -34,3 +34,14 @@ document.addEventListener('onButtonDown', function(event) {
 	ctx.fillRect(event.detail.x - 1, event.detail.y - 1, 2, 2);
 }); 
 ```
+
+## Contributors
+- [Jeremy Abel](https://github.com/jeremyabel)
+- [Kyle Phillips](https://github.com/hapticdata)
+- [Nick Fox-Gieg](https://github.com/n1ckfg)
+- [Jeramy Morrill](https://github.com/theceremony)
+- [Manny Tan](https://github.com/mannytan)
+- [Felix Woitzel](https://github.com/flexi23)
+- [Anders Hoff](https://github.com/inconvergent)
+- [Dimitry Bentsionov](https://github.com/dimitry)
+- [Nick Stahlnecker](https://github.com/Stahlneckr)
