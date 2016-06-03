@@ -14,5 +14,8 @@
   },
   "scripts": {
     "build": "browserify src/app.js -d > index.js"
+  },
+  "devDependencies": {
+    "browserify": "^13.0.1"
   }
 }

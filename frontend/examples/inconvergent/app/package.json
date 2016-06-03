@@ -11,5 +11,8 @@
         "build": "browserify src/app.js > index.js",
         "postinstall": "browserify src/app.js > index.js"
     },
-    "version": "1.0.0"
+    "version": "1.0.0",
+    "devDependencies": {
+      "browserify": "^13.0.1"
+    }
 }

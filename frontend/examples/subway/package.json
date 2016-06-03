@@ -12,5 +12,9 @@
   "dependencies": {
     "anypixel": "^1.0.0",
     "exdat": "github:anvaka/dat.gui"
+  },
+  "devDependencies": {
+    "browserify": "^13.0.1",
+    "watchify": "^3.7.0"
   }
 }

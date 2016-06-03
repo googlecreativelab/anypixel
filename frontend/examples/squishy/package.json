@@ -28,5 +28,9 @@
   },
   "browserify-shim": {
     "./libs/box2d.min.js": "box2d"
+  },
+  "devDependencies": {
+    "browserify": "^13.0.1",
+    "watchify": "^3.7.0"
   }
 }
