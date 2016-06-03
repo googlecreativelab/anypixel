@@ -8,6 +8,9 @@ $ npm install -g browserify
 $ npm install -g https://anypixel-storage.appspot.com/npm/anypixel-previewer.tar.gz
 ```
 
+### Check out the examples 
+We've included 12 example apps written by Googlers and friends for the 8th Avenue lobby display in NYC. After installing the previewer, run one of the [examples](https://github.com/googlecreativelab/anypixel/tree/master/frontend/examples).
+
 ### Usage
 ```
 Usage:
