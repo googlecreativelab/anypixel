@@ -18,3 +18,4 @@ node_modules
 *.gz
 
 index.js
+!frontend/examples/ballpit/app/index.js
