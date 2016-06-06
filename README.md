@@ -45,3 +45,7 @@ document.addEventListener('onButtonDown', function(event) {
 - [Anders Hoff](https://github.com/inconvergent)
 - [Dimitry Bentsionov](https://github.com/dimitry)
 - [Nick Stahlnecker](https://github.com/Stahlneckr)
+- 
+
+## Note
+Third party directories may have different (non-Apache 2.0) licenses.
