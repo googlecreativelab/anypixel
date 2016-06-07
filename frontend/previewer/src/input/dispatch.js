@@ -17,7 +17,7 @@
 'use strict';
 
 /**
- * Provides a function whicbh dispatches a buttonState CustomEvent with a given location and state 
+ * Provides a function which dispatches a buttonState CustomEvent with a given location and state
  */
 module.exports = function dispatchStateEvent(location, pushedState) {
 	document.dispatchEvent(new CustomEvent('buttonStates', {
