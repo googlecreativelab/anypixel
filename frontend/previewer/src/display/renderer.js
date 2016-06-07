@@ -78,7 +78,7 @@ renderer.init = function init() {
 }
 
 /**
- * Composites a target canvas with the button-patterened mask. If an additional canvas is provided, 
+ * Composites a target canvas with the button-patterned mask. If an additional canvas is provided,
  * it will be rendered atop the target canvas.
  */
 renderer.render = function render(target, debugCanvas, filterCanvas) {
