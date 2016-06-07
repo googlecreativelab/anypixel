@@ -47,7 +47,7 @@ To stop the manager, do `$ npm stop`
 ---------
 
 ### Emulator
-1. **Install node components** - In the /emulator directory, do: `$npm install`
+1. **Install node components** - In the /emulator directory, do: `$ npm install`
 
 2. **Install and launch the Chrome app** - Follow the ChromeBridge installation instructions above, 
 except when loading the extension, select the **/emulator** folder instead.
