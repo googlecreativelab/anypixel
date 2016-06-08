@@ -30,7 +30,7 @@ var colors = ['#F00', '#0F0', '#00F'];
  * * Listen for onButtonDown events and draw a 2x2 rectangle at the event site
  */
 document.addEventListener('onButtonDown', function(event) {   
-	ctx.fillStyle = colors[Math.floor(Math.random() * 3)];
+	ctx.fillStyle = colors[Math.floor(Math.random() * colors.length)];
 	ctx.fillRect(event.detail.x - 1, event.detail.y - 1, 2, 2);
 }); 
 ```
