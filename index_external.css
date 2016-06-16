@@ -161,14 +161,14 @@ footer {
       background-repeat: no-repeat; }
 
 .google a {
-  background-image: url(../svg/google_plus.svg);
+  background-image: url(svg/google_plus.svg);
   background-size: 55% !important; }
 
 .twitter a {
-  background-image: url(../svg/twitter.svg); }
+  background-image: url(svg/twitter.svg); }
 
 .facebook a {
-  background-image: url(../svg/facebook.svg);
+  background-image: url(svg/facebook.svg);
   background-size: 30% !important; }
 
 .get-button {
