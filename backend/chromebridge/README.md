@@ -39,8 +39,6 @@ Each frame, ChromeBridge receives a full frame of raw pixel data from the app cu
 
 Each display unit's pixel data is then moved into a data packet and assigned an IP address and a port corresponding to the address of the matching display unit controller board. To speed things up, several display units' packets are **bundled** into a single UDP packet and are sent to the **udp-manager** to be unbundled and distributed to the IP address stored in each packet.
 
-_For details on the packet formats used for this and all other data, see the [packet documentation](https://github.com/googlecreativelab/anypixel/wiki/Communications-Packets)_
-
 
 #### Button Inputs
 
