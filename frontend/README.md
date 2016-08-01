@@ -9,7 +9,7 @@ We've included 12 example apps written by Googlers and friends for the 8th Avenu
 ### Build your own app 
 Building your own app is easy with the Anypixel framework. To get started, check out the [framework documentation](https://github.com/googlecreativelab/anypixel/tree/master/frontend/framework) and the [example app](https://github.com/googlecreativelab/anypixel/tree/master/frontend/examples/getting-started):
 
-``` 
+``` js
 var anypixel = require('anypixel'); 
 var ctx = anypixel.canvas.getContext2D();
 
