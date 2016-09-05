@@ -112,6 +112,7 @@ header {
   font-weight: 100;
   font-size: 17px;
   margin: 0 auto;
+  pointer-events: none;
   position: absolute;
   top: 372px;
   text-align: center;
