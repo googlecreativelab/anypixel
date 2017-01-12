@@ -1,0 +1,17 @@
+{
+  "name": "anypixel-rpi-example",
+  "version": "1.0.0",
+  "description": "An example node application for interfacing with AnyPixel from a Raspberry Pi",
+  "main": "unit.js",
+  "scripts": {
+    "test": "sudo node unit.js"
+  },
+  "dependencies": {
+    "dgram": "~1.0.1",
+    "buffer": "~5.0.2",
+    "rpi-ws281x-native": "~0.8.1",
+    "wiring-pi": "latest"
+  },
+  "author": "Nick Jonas",
+  "license": "ISC"
+}
