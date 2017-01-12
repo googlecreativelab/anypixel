@@ -46,6 +46,7 @@ document.addEventListener('onButtonDown', function(event) {
 - [Anders Hoff](https://github.com/inconvergent)
 - [Dimitry Bentsionov](https://github.com/dimitry)
 - [Nick Stahlnecker](https://github.com/Stahlneckr)
+- [Nick Jonas](https://github.com/nick-jonas)
 
 
 ## Note
