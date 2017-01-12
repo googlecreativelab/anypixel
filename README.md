@@ -11,7 +11,7 @@ The first display using this platform is in the 8th Avenue lobby at the Google N
 - **/firmware** - microcontroller code, written for the STM32 family of devices.
 - **/backend** - node.js and chrome applications for communicating with the hardware.
 - **/frontend** - the app framework, an in-browser previewer, and 12 example apps written by Googlers and friends worldwide.
--**/rpi-example** - a simple starter example connecting a Raspberry Pi with AnyPixel to a single button for round trip communication.
+- **/rpi-example** - a simple starter example connecting a Raspberry Pi with AnyPixel to a single button for round trip communication.
 
 ## Getting Started
 
