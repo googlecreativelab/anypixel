@@ -107,14 +107,12 @@ var newPixelData = imgData.data;
 /**
  * Filters a given canvas to simulate the look of LEDs on the buttonwall. Returns a copy of the
  * original canvas. The original canvas is not modified.
- * 
- * TODO(abelj): this isn't very accurate
  */
 colorEmulation.filter = function(canvas) {
 	resultsContext.drawImage(canvas, 0, 0);
 	var data = resultsContext.getImageData(0, 0, canvas.width, canvas.height).data;
 
-  // Filter every pixel
+	// Filter every pixel
 	for (var i = 0, l = data.length; i < l; i += 4) {
 		var r = data[i];
 		var g = data[i + 1];
@@ -123,9 +121,16 @@ colorEmulation.filter = function(canvas) {
 		var x = Math.floor((i / 4) - y * canvas.width);
 		var hsv = rgbToHSV(r / 255, g / 255, b / 255);
 
-    // Cap the minimum brightness to 75%. This is the percieved brightness of a button whos LED 
-    // is entirely off. 
-    hsv.v = Math.max(0.75, hsv.v);
+		// When a button is off, it appears to be the same grey color as the wall itself.
+		// As the LED brightness increases, the perceived color gets brighter as well,
+		// and the color gets more saturated. We mimic this by keeping the saturation low
+		// if the brightness is low, and by capping the minimum brightness at 60%. So
+		// black becomes saturation 0%, value 60% (a 60% grey), while colors with 100%
+		// value are unchanged, and everything in between is scaled appropriately. Live
+		// testing on the wall suggests that this is a good (though not perfect)
+		// approximation to reality.
+		hsv.s *= hsv.v;
+		hsv.v = 0.6 + 0.4 * hsv.v;
 
 		var rgb = hsvToRGB(hsv.h, hsv.s, hsv.v);
 		newPixelData[0] = rgb.r;
