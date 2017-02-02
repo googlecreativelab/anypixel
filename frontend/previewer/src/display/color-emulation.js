@@ -32,8 +32,6 @@ var newPixelData = imgData.data;
 /**
  * Filters a given canvas to simulate the look of LEDs on the buttonwall. Returns a copy of the
  * original canvas. The original canvas is not modified.
- * 
- * TODO(abelj): this isn't very accurate
  */
 colorEmulation.filter = function(canvas) {
 	resultsContext.drawImage(canvas, 0, 0);
