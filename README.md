@@ -47,6 +47,7 @@ document.addEventListener('onButtonDown', function(event) {
 - [Dimitry Bentsionov](https://github.com/dimitry)
 - [Nick Stahlnecker](https://github.com/Stahlneckr)
 - [Nick Jonas](https://github.com/nick-jonas)
+- [Patrick Miller](https://github.com/patrickdmiller)
 
 
 ## Note
