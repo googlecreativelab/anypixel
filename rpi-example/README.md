@@ -21,22 +21,22 @@ With one LED button, your hardware setup should look like this:
 *<b>NOTE:</b> If you plan on scaling this example, keep in mind that you may require additional hardware - port expander(s), level shifter(s), and possibly a power supply that supplies a higher amperage (here we're using 5 volts, 2 amps).*
 
 
-#1. Setting up Raspberry Pi
+# 1. Setting up Raspberry Pi
 
-###1. Flash Raspbian
+### 1. Flash Raspbian
 
 Link for Raspbian images & instructions can be found [here](https://www.raspberrypi.org/downloads/raspbian/)
 
-###2. Install node.js
+### 2. Install node.js
 
-####Download Node.js source Raspberry Pi Model A, B, B+
+#### Download Node.js source Raspberry Pi Model A, B, B+
 ```
 wget https://nodejs.org/dist/v4.0.0/node-v4.0.0-linux-armv6l.tar.gz 
 tar -xvf node-v4.0.0-linux-armv6l.tar.gz 
 cd node-v4.0.0-linux-armv6l
 ```
 
-###3. Run the application
+### 3. Run the application
 
 Take the ```/rpi-example``` directory and transfer it to your RPi. You can simply clone this repo on your RPi to get it there easily.  
 Run ```npm install``` in that directory.  This will install the GPIO driver dependencies for the app.  
@@ -44,9 +44,9 @@ Then run ```sudo node unit.js``` to start listening to the UDP packets that will
 
 
 
-#2. Running the app from host computer
+# 2. Running the app from host computer
 
-###Install Sample App
+### Install Sample App
 Copy and paste ```frontend/examples/getting-started-rpi``` into ```appserver/public/apps/``` and then:
 
 ```
@@ -74,7 +74,7 @@ npm install
 npm start
 ```
 
-###Install & Run App Server
+### Install & Run App Server
 
 ```
 cd /backend/appserver 
@@ -85,7 +85,7 @@ npm run build
 npm start
 ```
 
-###Install ChromeBridge
+### Install ChromeBridge
 
 ```
 cd /backend/chromebridge
@@ -93,16 +93,16 @@ npm install
 ```
 
 Open Chrome and visit chrome://extensions and click "Load unpackaged extension", and navigate to & select the ```/backend/chromebridge``` folder.  This should enable the extension with confirmation in Chrome as follows:
-#####ChromeBridge Enabled
+##### ChromeBridge Enabled
 ![img](https://github.com/googlecreativelab/anypixel/blob/master/rpi-example/chromebridge.png)
 
 When you launch ChromeBridge, you should see the "Getting Started RPi" application in the dropdown menu, with a black square that turns blue every second.  When you launch the emulator, it should also show up there.
-#####ChromeBridge Working
+##### ChromeBridge Working
 ![img](https://github.com/googlecreativelab/anypixel/blob/master/rpi-example/chromebridge-working.png)
-#####Emulator Working
+##### Emulator Working
 ![img](https://github.com/googlecreativelab/anypixel/blob/master/rpi-example/emulator-working.png)
 
-###Point data to Raspberry Pi
+### Point data to Raspberry Pi
 Once you confirm that the emulator is working, you can quit it. Now we will start to point messages to the Raspberry Pi.  
 
 Once you have the IP address of the RPi, change out the first unit address in ```backend/config/config.emulator.js```, and match the port set on the RPi server (unless changed, it's set to 3001).  It should look like this, but with your IP address for the first entry:
@@ -166,6 +166,6 @@ Rebuild the chromebridge by running ```npm run build``` in ```/backend/chromebri
 
 
 
-##At this point you have a full, round-trip connection!  Hack away friends.
+## At this point you have a full, round-trip connection!  Hack away friends.
 
 
