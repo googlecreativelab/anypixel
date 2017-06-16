@@ -78,6 +78,7 @@ npm start
 
 ```
 cd /backend/appserver 
+mkdir -p public/js
 npm install
 npm install anypixel
 npm start
