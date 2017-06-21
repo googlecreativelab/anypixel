@@ -28,7 +28,7 @@ var ctx = anypixel.canvas.getContext2D();
 var colors = ['#F00', '#0F0', '#00F'];
 
 /**  
- * * Listen for onButtonDown events and draw a 2x2 rectangle at the event site
+ * Listen for onButtonDown events and draw a 2x2 rectangle at the event site
  */
 document.addEventListener('onButtonDown', function(event) {   
 	ctx.fillStyle = colors[Math.floor(Math.random() * colors.length)];
