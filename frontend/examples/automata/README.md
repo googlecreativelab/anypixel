@@ -12,7 +12,7 @@ or
 npm run build
 ```
 
-To run it, you'll need to install [Anypixel-Previewer](https://github.com/googlecreativelab/anypixel-previewer) first. Then in the app's root directory, do:
+To run it, you'll need to install the [previewer app](https://github.com/googlecreativelab/anypixel/tree/master/frontend/previewer) first. Then in the app's root directory, do:
 ```sh   
 preview
 ```

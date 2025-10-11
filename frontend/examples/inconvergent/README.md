@@ -4,9 +4,9 @@ forked from: https://github.com/googlecreativelab/anypixel-example
 
 ## Installation
 
-First you will need to install the Anypixel previewer:
+First you will need to install the previewer app:
 
-https://github.com/googlecreativelab/anypixel-previewer.
+https://github.com/googlecreativelab/anypixel/tree/master/frontend/previewer.
 
 The in the `app` directory do:
 

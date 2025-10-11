@@ -18,7 +18,7 @@ For the blur algorithm that was used, see [ShaderLesson5](https://github.com/mat
 
 Read more about the spline drawing animation here: [How to move an object along a particular path](http://stackoverflow.com/a/17096947/6036193)
 
-run with the [Anypixel-Previewer](https://github.com/googlecreativelab/anypixel-previewer). In the app's root directory, do:
+run with the [previewer app](https://github.com/googlecreativelab/anypixel/tree/master/frontend/previewer). In the app's root directory, do:
 ```sh   
 preview
 ```
